@@ -13,11 +13,19 @@ public class Sketch extends PApplet {
      */
 
     Ball b1;
+    Ball b2;
+    Ball b3;
+    Ball b4;
+    
+    Bubble bl1;
+    Bubble bl2;
+    Bubble bl3;
+    Bubble bl4;
 
     public void settings() {
         size(500, 500);
     }
-
+    
     /*
      * SUMMATIVE REQUIRED Initialize the balls, bubbles, and snowflakes using your
      * constructors inside of setup(). You must use a non-default-constructor at
@@ -28,6 +36,14 @@ public class Sketch extends PApplet {
     public void setup() {
         frameRate(30);
         b1 = new Ball(this);
+        b2 = new Ball(this);
+        b3 = new Ball(this);
+        b4 = new Ball(this);
+        
+        bl1 = new Bubble(this);
+        bl2 = new Bubble(this);
+        bl3 = new Bubble(this);
+        bl4 = new Bubble(this);
     }
 
     public void draw() {
@@ -36,6 +52,26 @@ public class Sketch extends PApplet {
         /* SUMMATIVE REQUIRED Draw and move all balls, snowflakes, and bubbles */
         b1.drawBall();
         b1.moveBall();
+        b2.drawBall();
+        b2.moveBall();
+        b3.drawBall();
+        b3.moveBall();
+        b4.drawBall();
+        b4.moveBall();
+
+        bl1.drawBubble();
+        bl1.moveBubble();
+        bl2.drawBubble();
+        bl2.moveBubble();
+        bl3.drawBubble();
+        bl3.moveBubble();
+        bl4.drawBubble();
+        bl4.moveBubble();
+
+    }
+
+    public void mouseClicked() {
+      
     }
 
     /**

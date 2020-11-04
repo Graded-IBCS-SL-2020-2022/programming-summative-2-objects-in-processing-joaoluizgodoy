@@ -12,6 +12,33 @@ class Bubble {
     private float speedY;
     private float speedX;
 
+
+
+    public Bubble(Sketch sketch){
+      s = sketch;
+        diameter = s.random(10, 100); 
+        x = s.random(diameter / 2, s.width - diameter / 2);
+        y = s.random(diameter / 2, s.height - diameter / 2);
+        col = s.color(255, 150);
+        borderColor = s.randomColor(false);
+        speedX = s.random(10,1);
+        speedY = s.random(-10,-1);
+    }
+    
+    public Bubble(Sketch sketch, float X, float Y, float bubbleDiam, int bubbleColor, int bubbleBorder, float sx, float sy){
+      s = sketch;
+      x = X;
+      y = Y;
+      diameter = bubbleDiam;
+      col = bubbleColor;
+      borderColor = bubbleBorder;
+      speedX = sx;
+      speedY = sy;
+    }
+
+    public float getRadius(){
+      return diameter / 2;
+    }
     /**
      * SUMMATIVE REQUIRED Add two constructors for the Bubble class, one that is
      * mostly default and one that allows custom values for whichever you want to be
@@ -39,8 +66,10 @@ class Bubble {
         s.stroke(borderColor);
         s.fill(col);
         s.ellipse(x, y, diameter, diameter);
+        
     }
-
+    
+   
     /** Moves the balls. */
     public void moveBubble() {
 
