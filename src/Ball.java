@@ -5,6 +5,7 @@ class Ball {
     private float x;
     private float y;
     private int col;
+    private int borderColor;
     private float speedY;
     private float speedX;
 
@@ -18,6 +19,7 @@ class Ball {
         x = s.random(diameter / 2, s.width - diameter / 2);
         y = s.random(diameter / 2, s.height - diameter / 2);
         col = s.randomColor(false);
+        borderColor = s.randomColor(false);
 
         speedX = s.random(1,6);
         speedY = s.random(1,6);
@@ -35,12 +37,13 @@ class Ball {
     }
       
     /** This constructor lets you specify all of the ball instance variables */
-    public Ball(Sketch sketch, float X, float Y, float ballDiam, int ballColor, float sx, float sy) {
+    public Ball(Sketch sketch, float X, float Y, float ballDiam, int ballColor, int ballBorder, float sx, float sy) {
       s = sketch;
       x = X;
       y = Y;
       diameter = ballDiam;
       col = ballColor;
+      borderColor = ballBorder;
       speedX = sx;
       speedY = sy;
         /* SUMMATIVE REQUIRED Fill out this constructor */
@@ -53,6 +56,7 @@ class Ball {
     public float getRadius(){
       return diameter / 2;
     }
+
     /*
      * SUMMATIVE OPTIONAL Add a method called `stop()` that sets the ball speed to
      * 0, and another one called `start()` that starts it moving again, either at
@@ -69,7 +73,7 @@ class Ball {
          * the border color to make it show up. You will need to make other changes too.
          */
 
-        s.stroke(col);
+        s.stroke(borderColor);
         s.fill(col);
         s.ellipse(x, y, diameter, diameter);
     }
